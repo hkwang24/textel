@@ -4,7 +4,7 @@ Final Project for NETS213
 Overview of flow diagram (see Diagram&Mockups.png for actual diagram):
 
 1. Content creation (total = 6):
-   (a) Select a suitable existing text RPG for comparison and pull its introduction (1)
+   /(a) Select a suitable existing text RPG for comparison and pull its introduction (1)
    (b) Create guidelines for content creation HIT workers (1) 
    (c) Create HIT (1)
    (d) Implement multiple rounds of content creation HITs and approve/reject manually (3)
