@@ -3,28 +3,28 @@
   <crowd-instructions link-text="View instructions" link-type="button">
     <short-summary>
       <p>Here you will be given a short story that is part of a larger choose-your-own-adventure game. The text in italics between paragraphs is the choice that connects
-         the previous paragraph to the next paragraph. Edit the text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of 
+         the previous paragraph to the next paragraph. Edit only the bolded text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of 
          the story. Please add or change at least 15 words.</p>
     </short-summary>
 
     <detailed-instructions>
       <h3>Provide more detailed instructions here</h3>
       <p>Here you will be given a short story that is part of a larger choose-your-own-adventure game. The text in italics between paragraphs is the choice that connects
-         the previous paragraph to the next paragraph. Edit the text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of 
+         the previous paragraph to the next paragraph. Edit only the bolded text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of 
          the story. Please add or change at least 15 words. </p>
     </detailed-instructions>
 
   <div>
     <p>Here is your story:</p>
-    <p>${input1}</p>
-    <p>${input1choice}</p>
+    <p><b>${input1}</b></p>
+    <p><b>${input1choice}</b></p>
     <p>${input2}</p>
     <p>${input2choice}</p>
     <p>${input3}</p>
   </div>
 
   <div>
-    <p>Edit the text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of the story. Please add or change at least 15 words.</p>
-    <crowd-text-area name="essay" rows="10" placeholder="${input1} ${input1choice} ${input2} ${input2choice} ${input3}" required></crowd-text-area>
+    <p>Edit only the bolded text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of the story. Please add or change at least 15 words.</p>
+    <crowd-text-area name="essay" rows="10" placeholder="${input1} ${input1choice}" required></crowd-text-area>
   </div>
 </crowd-form>
