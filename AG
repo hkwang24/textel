@@ -1,0 +1,24 @@
+<crowd-form answer-format="flatten-objects">
+
+  <crowd-instructions link-text="View instructions" link-type="button">
+    <short-summary>
+      <p>Here you will be given a couple versions of a text selection. Please copy/paste the version you think is of the best quality into the input box below.</p>
+    </short-summary>
+
+    <detailed-instructions>
+      <h3>Provide more detailed instructions here</h3>
+      <p>Here you will be given a couple versions of a text selection. Please copy/paste the version you think is of the best quality into the input box below. </p>
+    </detailed-instructions>
+
+  <div>
+    <p>Here are your options:</p>
+    ${input1}
+    <p>${input2}</p>
+    <p>${input3}</p>
+  </div>
+
+  <div>
+    <p>Here you will be given a couple versions of a text selection. Please copy/paste the version you think is of the best quality into the input box below.</p>
+    <crowd-text-area name="essay" rows="1" placeholder="" required></crowd-text-area>
+  </div>
+</crowd-form>
