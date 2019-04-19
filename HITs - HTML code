@@ -1,1 +1,148 @@
+<!--- HTML code for Content Creation HIT -->
 
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<crowd-form answer-format="flatten-objects">
+
+    <div>
+        <strong>Instructions: </strong> 
+        <span>Here you will be given a scenario that is the starting scene of a create your own adventure game. A create your 
+        own adventure game is a game in which the player is given a scenario and multiple options for what action is taken 
+        next. The next part of the story's plot depends on the player's choice. Write an idea for an interesting path on 
+        which the story can continue. 
+            <p>It is late at night, and you are the last person from your office to leave. As you get up to leave, 
+            you heard a noise in a room and entered to see where the noise was coming from. When you enter the room, the door 
+            suddenly shuts behind you. You can't see anything, and all you have in your penn ID card. You can choose to: 
+            (list possible next actions)</p>
+        </span>
+        <div>
+            <div>
+                <p><strong>Next path: </strong></p>
+                <p><crowd-input name="content" placeholder="Next path"></crowd-input></p>
+            </div>
+        </div>
+    </div>
+</crowd-form>
+
+<!--- HTML code for Best Content Collection HIT -->
+
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form answer-format="flatten-objects">
+
+    <div>
+        <strong>Instructions: </strong> 
+        <span>You are given the story so far of a create your adventure game, and 10 ideas for the next paths the story
+        can progress in. Choose the top 2-4 ideas that you think will progress the game in the most interesting way" </span>
+        <div>
+            <div>
+                <p>Story so far: </strong></p>
+                <p>"$story" </strong></p>
+                
+                <p>Option 1: </strong></p>
+                <p>"$content1"</strong></p>
+                <p>Option 2: </strong></p>
+                <p>"$content2"</strong></p>
+                <p>Option 3: </strong></p>
+                <p>"$content3"</strong></p>
+                <p>Option 4: </strong></p>
+                <p>"$content4"</strong></p>
+                <p>Option 5: </strong></p>
+                <p>"$content5"</strong></p>
+                <p>Option 6: </strong></p>
+                <p>"$content6"</strong></p>
+                <p>Option 7: </strong></p>
+                <p>"$content7"</strong></p>
+                <p>Option 8: </strong></p>
+                <p>"$content8"</strong></p>
+                <p>Option 9: </strong></p>
+                <p>"$content9"</strong></p>
+                <p>Option 10: </strong></p>
+                <p>"$content10"</strong></p>
+                
+                
+            </div>
+
+            <div>
+                <p><strong>Select the top 2-4 endings:</strong></p>
+                <p><input type="checkbox" name="content1" value="Option 1"> Option 1<br></p>
+                <p><input type="checkbox" name="content2" value="Option 2"> Option 2<br></p>
+                <p><input type="checkbox" name="content3" value="Option 3"> Option 3<br></p>
+                <p><input type="checkbox" name="content4" value="Option 4"> Option 4<br></p>
+                <p><input type="checkbox" name="content5" value="Option 5"> Option 5<br></p>
+                <p><input type="checkbox" name="content6" value="Option 6"> Option 6<br></p>
+                <p><input type="checkbox" name="content7" value="Option 7"> Option 7<br></p>
+                <p><input type="checkbox" name="content8" value="Option 8"> Option 8<br></p>
+                <p><input type="checkbox" name="content9" value="Option 9"> Option 9<br></p>
+                <p><input type="checkbox" name="content10" value="Option 10"> Option 10<br></p>
+            </div>
+        </div>
+    </div>
+</crowd-form>
+
+<!--- HTML code for Editing HIT -->
+
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form answer-format="flatten-objects">
+
+    <div>
+        <strong>Instructions: </strong> 
+        <span>Here you will be given a short story that is part of a larger choose-your-own-adventure game. The text in italics between paragraphs is the choice that connects
+         the previous paragraph to the next paragraph. Edit only the bolded text (including the italicized words, if necessary) to improve detail, continuity, and overall quality of 
+         the story. Please add or change at least 15 words.</span>
+        <div>
+            <div>
+                <p><strong>Story:</strong></p>
+                <p>"$story"</strong></p>
+               
+            </div>
+
+            <div>
+                <p><strong>Edited story:</strong></p>
+                <p><crowd-input name="newStory" placeholder="Insert your edited story" required></crowd-input></p>
+            </div>
+
+        </div>
+    </div>
+</crowd-form>
+
+<!--- HTML code for Rating HIT -->
+
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form answer-format="flatten-objects">
+
+    <div>
+        <strong>Instructions: </strong> 
+        <span>In this HIT, you will play a full choose-your-own-adventure game two times. Choose different paths 
+        each time you play the game, and then answer the questions about your experience playing the game. When playing
+        the game, note down which path choices you make so that you can report these choices in the post-game questions.
+        <div>
+            <div>
+                <p><strong>Link to the game:</strong></p>
+
+                <!-- Your website URLs will be substituted for the "url" variable when you publish 
+                       a batch with an input file containing multiple website URLs -->
+                <a href="${url}" target="_blank">${url}</a>
+
+            </div>
+
+            <div>
+                <p><strong>List the choices you made during the first time you played:</strong></p>
+                <p><crowd-input name="choices1" placeholder="Choices - 1st play"></crowd-input></p>
+                <p><strong>List the choices you made during the second time you played:</strong></p>
+                <p><crowd-input name="choices2" placeholder="Choices - 2nd play"></crowd-input></p>
+                
+                <p><strong>Which play did you like better: </strong></p>
+                <form action="">
+                    <input type="radio" name="play1" value="First play"> First play<br>
+                    <input type="radio" name="play2" value="Second play"> Second play<br>
+                    <input type="radio" name="equal" value="Equally good"> Equally good <br>
+                </form>
+                
+                <p><strong>List any specific choices you made that you felt made the game 
+                more exciting: </strong></p>
+                <p><crowd-input name="goodchoices" placeholder="Choice 1, Choice 2... "></crowd-input></p>
+            </div>
+    </div>
+</crowd-form>
