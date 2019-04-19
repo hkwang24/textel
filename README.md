@@ -2,6 +2,7 @@
 Final Project for NETS213
 
 Step by Step README for how to contribute to HITs and Play the Game
+
 Our project is called Textel and is a crowdsourced choose-your-own-adventure game. A choose-your-own adventure game is a text-based game that allows readers to make choices and affect what happens next in the story. The goal of this project is to create such a game through crowdsourcing. Note that we have 4 different HITs and the different HITs will be live at different times based on the data that we gather. We will first start with the content creation HIT, and once enough content has been created we will move on to aggregating the data and having workers select the best content. We will then have workers edit the last item in the story and finally play two of the games and rate which story they liked better (this is a part of the analysis part of our project). 
 
 1. You can find a working prototype of our HITs in the amazon mechanical turk sandbox link above. 
@@ -14,5 +15,7 @@ Our project is called Textel and is a crowdsourced choose-your-own-adventure gam
 
 
 README for code documentation and analysis we plan to do
+
 	Our code includes whatever we have in our HTML file in order to get previous workers’ data and input it into the next step. For example, once we have workers create content, we will process this csv file and make it the next input into workers selecting the best data. Once that HIT is completed, we will process the csv again (with the 2-4 best choices for each content created), and give workers completed stories and have them edit the last line. This is how we will determine each step of the story and we will have to do this several times in order to form complete story with multiple different outcomes. For each of these steps we will have to iterate through and re enter the data into the HITs multiple times so that the workers can iterate on the last line and improve the story. At the end of this we will have a story with many different paths. In creating our HITs we represent inputs for the HITs as variables. When we actually gather data these variables would represent data collected from previous HITs which would be the input for the next HIT in the process. 
+	
 	This is where the analysis portion of our project comes in. Workers will play two games fully through and decide which one is better by rating them on a 5 star scale. They will also write a paragraph explaining why one game is better than the other. We will also analyze which path in a story people take more often, and how satisfying one part of the story is than another (by having workers rate their satisfaction level with how the story turned out). We could also have them play a professional choose-your-own-adventure game versus the one we made and have them say which one they thought was better. 
