@@ -1,0 +1,28 @@
+#upload csv file from HIT
+from google.colab import files
+uploaded = files.upload()
+
+import numpy as np
+import pandas as pd
+
+#prepare output file for 2nd HIT input
+o_df = pd.read_csv('FirstHitOutput.csv')
+df = pd.DataFrame(columns=['content'])
+counter = 0
+for x in o_df['content']:
+  df['content'].iloc[counter] = x
+  counter += 1
+df.to_csv('output1.csv')
+
+#compile suggestions 
+df2 = pd.DataFrame(columns=['content', 'suggestions'])
+counter = 0
+for x in o_df['content']:
+  df['content'].iloc[counter] = x
+  counter += 1
+counter2 = 0
+for y in o_df['suggestions']:
+  df['suggestions'].iloc[counter2] = y
+  counter2 += 1  
+df2.to_csv('output2.csv')
+
