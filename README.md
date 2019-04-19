@@ -1,21 +1,35 @@
 # NETS213
 Final Project for NETS213
 
-Step by Step README for how to contribute to HITs and Play the Game
+Overview of flow diagram (see Diagram&Mockups.png for actual diagram):
 
-Our project is called Textel and is a crowdsourced choose-your-own-adventure game. A choose-your-own adventure game is a text-based game that allows readers to make choices and affect what happens next in the story. The goal of this project is to create such a game through crowdsourcing. Note that we have 4 different HITs and the different HITs will be live at different times based on the data that we gather. We will first start with the content creation HIT, and once enough content has been created we will move on to aggregating the data and having workers select the best content. We will then have workers edit the last item in the story and finally play two of the games and rate which story they liked better (this is a part of the analysis part of our project). 
+1. Content creation (total = 6): <br>
+   (a) Select a suitable existing text RPG for comparison and pull its introduction (1) <br>
+   (b) Create guidelines for content creation HIT workers (1) <br>
+   (c) Create HIT (1) <br>
+   (d) Implement multiple rounds of content creation HITs and approve/reject manually (3)
 
-1. You can find a working prototype of our HITs in the amazon mechanical turk sandbox link above. 
-2. There are 4 HITs as a part of this project. 
-3. Content Creation: If you choose to complete the content creation HITs you will be given the story completed to a certain point and then you will need to write text for what could happen next in the story
-4. Best Content Selection: For this HIT you will also be given the story to a certain point and you will need to select 2-4 from the list of options as to which option would be the most exciting path for the story to continue with. As a way to conduct quality control, we will have a couple of random sentences and see if the workers select those as a part of the 2-4 they choose. If they do, then we would reject their work since they are not doing the task properly. 
-5. Editing HITs: For this HIT you are again given the story up until a certain point, and you will need to iterate over the last item that happens by adding more detail and to improve continuity. Within this HIT we would have workers flag parts of the story that lack continuity, and based on that we would reject the workers who created those HITs. 
-6. Rating HITs: In this HIT, you will play two full choose-your-own-adventure games, by choosing what happens at different steps in the game, and then answering some questions afterwards on how the games were (essentially rating and comparing the games). This how we will determine which games are more entertaining/better to play than others. 
-7. If you have any questions about any of the above steps when completing our HITS please reach out to Mythili Bhethanabotla at mythilib@seas.upenn.edu
+2. Content aggregation (total = 3): <br>
+   (a) Create a Textadventures Quest account (1) <br>
+   (b) Pool all content creation results into a single text RPG (2)
 
-
-README for code documentation and analysis we plan to do
+3. Split content (total = 2): <br>
+   (a) Split text RPG into its paths (2)
 
-	Our code includes whatever we have in our HTML file in order to get previous workers’ data and input it into the next step. For example, once we have workers create content, we will process this csv file and make it the next input into workers selecting the best data. Once that HIT is completed, we will process the csv again (with the 2-4 best choices for each content created), and give workers completed stories and have them edit the last line. This is how we will determine each step of the story and we will have to do this several times in order to form complete story with multiple different outcomes. For each of these steps we will have to iterate through and re enter the data into the HITs multiple times so that the workers can iterate on the last line and improve the story. At the end of this we will have a story with many different paths. In creating our HITs we represent inputs for the HITs as variables. When we actually gather data these variables would represent data collected from previous HITs which would be the input for the next HIT in the process. 
-	
-	This is where the analysis portion of our project comes in. Workers will play two games fully through and decide which one is better by rating them on a 5 star scale. They will also write a paragraph explaining why one game is better than the other. We will also analyze which path in a story people take more often, and how satisfying one part of the story is than another (by having workers rate their satisfaction level with how the story turned out). We could also have them play a professional choose-your-own-adventure game versus the one we made and have them say which one they thought was better. 
+4. Quality control (total = 5): <br>
+   (a) Create guidelines for path improvement HIT workers (1) <br>
+   (b) Create HIT (1) <br>
+   (c) Implement multiple iterative rounds of path improvement HITs and approve/reject manually (3)
+
+5. Rating comparison (total = 4): <br>
+   (a) Create guidelines for rating comparison HIT workers (1) <br>
+   (b) Create HIT (1) <br>
+   (c) Implement parallel HITs (2)
+   
+Overall total: 20
+
+Raw data: Our raw data is viewable in the "input" columns of SampleOutputQC.csv.
+
+Quality control: Our example .csv for quality control can be viewed at SampleOutputQC.csv. The data is organized in a way such that each path is represented by text (input1), the choice (input1choice), the next text (input2), the choice (input2choice), and so on. The output is simply an edited version of the whole path. The HTML AMT HIT code for our quality control module is located in the QC file. It essentially prints out the entire path by combining the input1, input1choice, input2, input2choice, etc. columns, and then asks the worker to edit the text. The way this works is that the worker can see the whole path, but we will only ask them to edit a singular input level.
+
+Aggregation: Our aggregation module is integrated into the quality control module, since we are using an iterative process to combine various workers' efforts into a quality text.
