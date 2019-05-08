@@ -1,0 +1,437 @@
+
+Untitled2.ipynb
+Untitled2.ipynb_
+..
+Disk
+27.22 GB available
+[ ]
+from google.colab import files
+uploaded = files.upload()
+[ ]
+import pandas as pd
+import numpy as np
+cw_df = pd.read_csv('content creation 1 results.csv')
+[ ]
+#get lengths of Student Responses
+
+counter = 0
+totalLengths = 0
+for x in cw_df["Answer.content"]:
+  totalLengths += len(x)
+  counter += 1
+averageStudentLengths = totalLengths/counter
+print (averageStudentLengths)
+
+[ ]
+from google.colab import files
+uploaded = files.upload()
+
+[ ]
+cw_df2 = pd.read_csv('content creation 2.csv')
+cw_df3 = pd.read_csv('content creation 3.csv')
+[ ]
+counter2 = 0
+totalMTurkLengths = 0
+for x in cw_df2["Answer.content"]:
+  totalMTurkLengths += len(x)
+  counter2 += 1
+for x in cw_df3["Answer.content"]:
+  totalMTurkLengths += len(x)
+  counter2 += 1
+averageWorkerLengths = totalMTurkLengths/counter2
+print (averageWorkerLengths)
+
+[ ]
+bw_df = pd.read_csv('Batch1.csv')
+bw_df2 = pd.read_csv('Batch2.csv')
+bw_df3 = pd.read_csv('Batch3.csv')
+bw_df = pd.read_csv('Batch1.csv')
+bw_df2 = pd.read_csv('Batch2.csv')
+bw_df3 = pd.read_csv('Batch3.csv')
+originalRatings = []
+ourRatings = []
+for x in range(0, bw_df.shape[0]):
+#Original Ratings Batch 1
+  if (bw_df.loc[x,'Answer.original game.1'] == True):
+    originalRatings.append("1")
+  if (bw_df.loc[x,'Answer.original game.2'] == True):
+    originalRatings.append("2")
+  if (bw_df.loc[x,'Answer.original game.3'] == True):
+    originalRatings.append("3")
+  if (bw_df.loc[x,'Answer.original game.4'] == True):
+    originalRatings.append("4")
+  if (bw_df.loc[x,'Answer.original game.5'] == True):
+    originalRatings.append("5")
+  if (bw_df.loc[x,'Answer.original game.6'] == True):
+    originalRatings.append("6")
+  if (bw_df.loc[x,'Answer.original game.7'] == True):
+    originalRatings.append("7")
+  if (bw_df.loc[x,'Answer.original game.8'] == True):
+    originalRatings.append("8")
+  if (bw_df.loc[x,'Answer.original game.9'] == True):
+    originalRatings.append("9")
+  if (bw_df.loc[x,'Answer.original game.10'] == True):
+    originalRatings.append("10")
+#Our Ratings Batch 1
+  if (bw_df.loc[x,'Answer.our game.1'] == True):
+    ourRatings.append("1")
+  if (bw_df.loc[x,'Answer.our game.2'] == True):
+    ourRatings.append("2")
+  if (bw_df.loc[x,'Answer.our game.3'] == True):
+    ourRatings.append("3")
+  if (bw_df.loc[x,'Answer.our game.4'] == True):
+    ourRatings.append("4")
+  if (bw_df.loc[x,'Answer.our game.5'] == True):
+    ourRatings.append("5")
+  if (bw_df.loc[x,'Answer.our game.6'] == True):
+    ourRatings.append("6")
+  if (bw_df.loc[x,'Answer.our game.7'] == True):
+    ourRatings.append("7")
+  if (bw_df.loc[x,'Answer.our game.8'] == True):
+    ourRatings.append("8")
+  if (bw_df.loc[x,'Answer.our game.9'] == True):
+    ourRatings.append("9")
+  if (bw_df.loc[x,'Answer.our game.10'] == True):
+    ourRatings.append("10")
+
+for x in range(0, bw_df2.shape[0]):
+#Original Ratings Batch 2
+  if (bw_df2.loc[x,'Answer.original game.1'] == True):
+    originalRatings.append("1")
+  if (bw_df2.loc[x,'Answer.original game.2'] == True):
+    originalRatings.append("2")
+  if (bw_df2.loc[x,'Answer.original game.3'] == True):
+    originalRatings.append("3")
+  if (bw_df2.loc[x,'Answer.original game.4'] == True):
+    originalRatings.append("4")
+  if (bw_df2.loc[x,'Answer.original game.5'] == True):
+    originalRatings.append("5")
+  if (bw_df2.loc[x,'Answer.original game.6'] == True):
+    originalRatings.append("6")
+  if (bw_df2.loc[x,'Answer.original game.7'] == True):
+    originalRatings.append("7")
+  if (bw_df2.loc[x,'Answer.original game.8'] == True):
+    originalRatings.append("8")
+  if (bw_df2.loc[x,'Answer.original game.9'] == True):
+    originalRatings.append("9")
+  if (bw_df2.loc[x,'Answer.original game.10'] == True):
+    originalRatings.append("10")
+#Our Ratings Batch 2
+  if (bw_df2.loc[x,'Answer.our game.1'] == True):
+    ourRatings.append("1")
+  if (bw_df2.loc[x,'Answer.our game.2'] == True):
+    ourRatings.append("2")
+  if (bw_df2.loc[x,'Answer.our game.3'] == True):
+    ourRatings.append("3")
+  if (bw_df2.loc[x,'Answer.our game.4'] == True):
+    ourRatings.append("4")
+  if (bw_df2.loc[x,'Answer.our game.5'] == True):
+    ourRatings.append("5")
+  if (bw_df2.loc[x,'Answer.our game.6'] == True):
+    ourRatings.append("6")
+  if (bw_df2.loc[x,'Answer.our game.7'] == True):
+    ourRatings.append("7")
+  if (bw_df2.loc[x,'Answer.our game.8'] == True):
+    ourRatings.append("8")
+  if (bw_df2.loc[x,'Answer.our game.9'] == True):
+    ourRatings.append("9")
+  if (bw_df2.loc[x,'Answer.our game.10'] == True):
+    ourRatings.append("10")
+    
+for x in range(0, bw_df3.shape[0]):
+#Original Ratings Batch 3
+  if (bw_df3.loc[x,'Answer.original game.1'] == True):
+    originalRatings.append("1")
+  if (bw_df3.loc[x,'Answer.original game.2'] == True):
+    originalRatings.append("2")
+  if (bw_df3.loc[x,'Answer.original game.3'] == True):
+    originalRatings.append("3")
+  if (bw_df3.loc[x,'Answer.original game.4'] == True):
+    originalRatings.append("4")
+  if (bw_df3.loc[x,'Answer.original game.5'] == True):
+    originalRatings.append("5")
+  if (bw_df3.loc[x,'Answer.original game.6'] == True):
+    originalRatings.append("6")
+  if (bw_df3.loc[x,'Answer.original game.7'] == True):
+    originalRatings.append("7")
+  if (bw_df3.loc[x,'Answer.original game.8'] == True):
+    originalRatings.append("8")
+  if (bw_df3.loc[x,'Answer.original game.9'] == True):
+    originalRatings.append("9")
+  if (bw_df3.loc[x,'Answer.original game.10'] == True):
+    originalRatings.append("10")
+#Our Ratings Batch 3
+  if (bw_df3.loc[x,'Answer.our game.1'] == True):
+    ourRatings.append("1")
+  if (bw_df3.loc[x,'Answer.our game.2'] == True):
+    ourRatings.append("2")
+  if (bw_df3.loc[x,'Answer.our game.3'] == True):
+    ourRatings.append("3")
+  if (bw_df3.loc[x,'Answer.our game.4'] == True):
+    ourRatings.append("4")
+  if (bw_df3.loc[x,'Answer.our game.5'] == True):
+    ourRatings.append("5")
+  if (bw_df3.loc[x,'Answer.our game.6'] == True):
+    ourRatings.append("6")
+  if (bw_df3.loc[x,'Answer.our game.7'] == True):
+    ourRatings.append("7")
+  if (bw_df3.loc[x,'Answer.our game.8'] == True):
+    ourRatings.append("8")
+  if (bw_df3.loc[x,'Answer.our game.9'] == True):
+    ourRatings.append("9")
+  if (bw_df3.loc[x,'Answer.our game.10'] == True):
+    ourRatings.append("10")
+    
+data = {'OriginalRatings': originalRatings, 'OurRatings': ourRatings} 
+newdf = pd.DataFrame(data) 
+newdf.to_csv("data.csv")
+files.download('data.csv') 
+
+      
+print(ourRatings)
+print(originalRatings)
+#print(bw_df[0]["Answer.original game.1"])
+  
+[ ]
+data1 = {'Countries': countries} 
+newdf1 = pd.DataFrame(data1) 
+newdf1.to_csv("data1.csv")
+files.download('data1.csv') 
+countries = []
+for x in range(0, bw_df.shape[0]):
+#Countries Batch 1
+  if (bw_df.loc[x,'Answer.race.asian'] == True):
+    countries.append("Asian")
+  if (bw_df.loc[x,'Answer.race.black'] == True):
+    countries.append("African")
+  if (bw_df.loc[x,'Answer.race.hispanic'] == True):
+    countries.append("Hispanic")
+  if (bw_df.loc[x,'Answer.race.native american'] == True):
+    countries.append("Native merican")
+  if (bw_df.loc[x,'Answer.race.pacific islander'] == True):
+    countries.append("Pacific Islander")
+  if (bw_df.loc[x,'Answer.race.white'] == True):
+    countries.append("White")
+    
+for x in range(0, bw_df2.shape[0]):
+#Countries Batch 2
+  if (bw_df2.loc[x,'Answer.race.asian'] == True):
+    countries.append("Asian")
+  if (bw_df2.loc[x,'Answer.race.black'] == True):
+    countries.append("African")
+  if (bw_df2.loc[x,'Answer.race.hispanic'] == True):
+    countries.append("Hispanic")
+  if (bw_df2.loc[x,'Answer.race.native american'] == True):
+    countries.append("Native merican")
+  if (bw_df2.loc[x,'Answer.race.pacific islander'] == True):
+    countries.append("Pacific Islander")
+  if (bw_df2.loc[x,'Answer.race.white'] == True):
+    countries.append("White")
+    
+for x in range(0, bw_df3.shape[0]):
+#Countries Batch 3
+  if (bw_df3.loc[x,'Answer.race.asian'] == True):
+    countries.append("Asian")
+  if (bw_df3.loc[x,'Answer.race.black'] == True):
+    countries.append("African")
+  if (bw_df3.loc[x,'Answer.race.hispanic'] == True):
+    countries.append("Hispanic")
+  if (bw_df3.loc[x,'Answer.race.native american'] == True):
+    countries.append("Native merican")
+  if (bw_df3.loc[x,'Answer.race.pacific islander'] == True):
+    countries.append("Pacific Islander")
+  if (bw_df3.loc[x,'Answer.race.white'] == True):
+    countries.append("White")
+    
+data1 = {'Countries': countries} 
+newdf1 = pd.DataFrame(data1) 
+newdf1.to_csv("data1.csv")
+files.download('data1.csv') 
+[ ]
+df = pd.read_csv('data.csv')
+import pandas as pd
+df = pd.read_csv('data.csv')
+female = 0
+male = 0
+row = 0
+while row < df.shape[0]:
+  if (df.iloc[row]['Answer.gender'] == 'F'):
+    female += 1
+  else:
+    male += 1
+    
+  row += 1
+  
+print(female)
+print(male)
+
+
+[ ]
+data2 = {'averagesByRace': array} 
+averages = pd.DataFrame(data2) 
+averages.to_csv("averages.csv")
+files.download('averages.csv') 
+ogWhite = 0
+white = 0
+c = 0
+ogAsian = 0
+asian = 0
+c1 = 0
+ogAfrican = 0
+african = 0
+c2 = 0
+ogNative = 0
+native = 0
+c3 = 0
+ogHispanic = 0
+hispanic = 0
+c4 = 0
+ogPacific = 0
+pacific = 0
+c5 = 0
+array = []
+df = pd.read_csv('data.csv')
+
+for x in range(0, df.shape[0]):
+  if (df.iloc[x]['Countries'] == 'White'):
+    ogWhite += df.iloc[x]['OriginalRatings']
+    white += df.iloc[x]['OurRatings']
+    c += 1
+  if (df.iloc[x]['Countries'] == 'Asian'):
+    ogAsian += df.iloc[x]['OriginalRatings']
+    asian += df.iloc[x]['OurRatings']
+    c1 += 1
+  if (df.iloc[x]['Countries'] == 'African'):
+    ogAfrican += df.iloc[x]['OriginalRatings']
+    african += df.iloc[x]['OurRatings']
+    c2 += 1
+  if (df.iloc[x]['Countries'] == 'Native American'):
+    ogNative += df.iloc[x]['OriginalRatings']
+    native += df.iloc[x]['OurRatings']
+    c3 += 1
+  if (df.iloc[x]['Countries'] == 'Hispanic'):
+    ogHispanic += df.iloc[x]['OriginalRatings']
+    hispanic += df.iloc[x]['OurRatings']
+    c4 += 1
+  if (df.iloc[x]['Countries'] == 'Pacific Islander'):
+    ogPacific += df.iloc[x]['OriginalRatings']
+    pacific += df.iloc[x]['OurRatings']
+    c5 += 1
+
+w = ogWhite/c
+w2 = white/c
+a = ogAsian/c1
+a2 = asian/c1
+af = ogAfrican/c2
+af2 = african/c2
+n = ogNative/c3
+n2 = native/c3
+h = ogHispanic/c4
+h2 = hispanic/c4
+p = ogPacific 
+p2 = pacific
+array = [w, w2, a, a2, af, af2, n, n2, h, h2, p, p2]
+print(array)
+data2 = {'averagesByRace': array} 
+averages = pd.DataFrame(data2) 
+averages.to_csv("averages.csv")
+files.download('averages.csv') 
+[ ]
+array = [a, b, d, e, f, g]
+data3 = {'averagesByRace': array} 
+ages = pd.DataFrame(data3) 
+ages.to_csv("ages.csv")
+files.download('ages.csv') 
+ogTeen = 0
+teen = 0
+c = 0
+ogMiddleAge = 0
+middleAge = 0
+c1 = 0
+ogOldAge = 0
+oldAge = 0
+c2 = 0
+df = pd.read_csv('data.csv')
+for x in range(0, df.shape[0]):
+  if (df.iloc[x]['Answer.age'] <= 18):
+    teen += df.iloc[x]['OurRatings']
+    ogTeen += df.iloc[x]['OriginalRatings']
+    c += 1
+  if (df.iloc[x]['Answer.age'] <= 40 and df.iloc[x]['Answer.age'] > 18):
+    middleAge += df.iloc[x]['OurRatings']
+    ogMiddleAge += df.iloc[x]['OriginalRatings']
+    c1 += 1
+  if (df.iloc[x]['Answer.age'] > 40):
+    oldAge += df.iloc[x]['OurRatings']
+    ogOldAge += df.iloc[x]['OriginalRatings']
+    c2 += 1
+a = ogTeen/c
+b = teen/c
+d = ogMiddleAge/c1
+e = middleAge/c1
+f = ogOldAge/c2
+g = oldAge/c2
+array = [a, b, d, e, f, g]
+data3 = {'averagesByRace': array} 
+ages = pd.DataFrame(data3) 
+ages.to_csv("ages.csv")
+files.download('ages.csv') 
+info
+a = pd.read_csv('Batch1.csv')
+b = pd.read_csv('Batch2.csv')
+c = pd.read_csv('Batch3.csv')
+oCreativity = 0
+tCreativity = 0
+oFun = 0
+tFun = 0
+oLength = 0
+tLength = 0
+for x in range(0, a.shape[0]):
+  if (a.iloc[x]["Answer.creativity.original"] == True):
+    oCreativity += 1
+  if (a.iloc[x]["Answer.creativity.ours"] == True):
+    tCreativity += 1
+  if (a.iloc[x]["Answer.fun.original"] == True):
+    oFun += 1
+  if (a.iloc[x]["Answer.fun.ours"] == True):
+    tFun += 1
+  if (a.iloc[x]["Answer.length.original"] == True):
+    oLength += 1
+  if (a.iloc[x]["Answer.length.ours"] == True):
+    tLength += 1
+    
+    
+for x in range(0, b.shape[0]):
+  if (b.iloc[x]["Answer.creativity.original"] == True):
+    oCreativity += 1
+  if (b.iloc[x]["Answer.creativity.ours"] == True):
+    tCreativity += 1
+  if (b.iloc[x]["Answer.fun.original"] == True):
+    oFun += 1
+  if (a.iloc[x]["Answer.fun.ours"] == True):
+    tFun += 1
+  if (b.iloc[x]["Answer.length.original"] == True):
+    oLength += 1
+  if (b.iloc[x]["Answer.length.ours"] == True):
+    tLength += 1
+  
+    
+for x in range(0, c.shape[0]):
+  if (c.iloc[x]["Answer.creativity.original"] == True):
+    oCreativity += 1
+  if (c.iloc[x]["Answer.creativity.ours"] == True):
+    tCreativity += 1
+  if (c.iloc[x]["Answer.fun.original"] == True):
+    oFun += 1
+  if (c.iloc[x]["Answer.fun.ours"] == True):
+    tFun += 1
+  if (a.iloc[x]["Answer.length.original"] == True):
+    oLength += 1
+  if (c.iloc[x]["Answer.length.ours"] == True):
+    tLength += 1
+    
+array = [oCreativity, tCreativity, oFun, tFun, oLength, tLength]
+data9 = {'info': array} 
+info = pd.DataFrame(data9) 
+info.to_csv("info.csv")
+files.download('info.csv') 
